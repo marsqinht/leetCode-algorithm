@@ -25,7 +25,9 @@
   * @param {string} s
   * @return {number}
   */
-var romanToInt = str => {
+
+// 挑出特殊情况组成数组, 常规情况组成数组 然后相加 'MCMXCIV' --> ['M', 'CM', 'XC', 'IV'] -->[1000, 900, 90, 4] --> 1994
+const romanToInt = str => {
   const romanMap = {
     'I': 1,
     'V': 5,
@@ -43,25 +45,54 @@ var romanToInt = str => {
     'CD': 400,
     'CM': 900
   };
-  let arr = [];
-  Object.keys(specialRomanMap).forEach(el => {
-    let romanRxp = new RegExp(el);
-    if (romanRxp.test(str)) {
-      arr.push(el);   
-      str = str.replace(romanRxp, '');
-    } 
-  });
-  arr = arr.concat(str.split(''));
-  let map = Object.assign(romanMap, specialRomanMap);
-  let number = 0;
-  for (let i = 0, len = arr.length; i < len; i++) {
-    number += map[arr[i]];
-    
-  }
-  
-  return number;
+  const map = Object.assign(romanMap, specialRomanMap);
+
+  return Object.keys(specialRomanMap)
+    .filter(el=> {
+      let romanRxp = new RegExp(el);
+      if (romanRxp.test(str)) { 
+        str = str.replace(romanRxp, '');
+        return true;
+      }
+      return false;
+    })
+    .concat(str.split(''))
+    .map(el => {
+      return map[el];
+    })
+    .reduce((prev, next)=> {
+      return prev + next;
+    });
 
 };
 
 
+// 所有按常规相加, 特殊情况实际多加了2* prev 判断相减即可
+var romanToIntII = s => {
+  let map = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+  };
+
+  let prev;
+  let num = 0;
+  for (let i = 0, len = s.length; i < len; i++) {
+    num += map[s[i]];
+    if (prev && map[prev] < map[s[i]]) {
+      num -= map[prev] * 2;
+    }
+
+    prev = s[i];
+  }
+
+  return num;
+};
+
+
 console.log(romanToInt('IX'));
+console.log(romanToIntII('MCMXCIV'));
