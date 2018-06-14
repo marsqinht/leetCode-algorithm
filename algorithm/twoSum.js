@@ -11,6 +11,13 @@
 
  const nums = [2, 7, 11, 15];
 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+ // 循环嵌套,值相加
  const twoSum = function (nums, target) {
    for (let i = 0, len = nums.length; i < len; i++) {
      const num1 = nums[i]  
@@ -24,6 +31,7 @@
    return []
  };
 
+ // 循环两次,对比
  const twoSumII = function (nums, target) {
    let map = new Map();
    for (let i = 0, len = nums.length; i < len; i++) {
@@ -38,6 +46,7 @@
    return []
  }
 
+ //循环一次,比对哈希表
   const twoSumIII = function (nums, target) {
     const map = {};
     for (let i = 0, len = nums.length; i < len; i++) {
