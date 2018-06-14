@@ -29,6 +29,5 @@ var reverse = x => {
   return isOverflow ? 0 : x > 0 ? reverse : 0 - reverse;
 };
 
-// console.log(reverse(-120));
-
+console.log(reverse(-120));
 console.log(reverse(1563847412));
