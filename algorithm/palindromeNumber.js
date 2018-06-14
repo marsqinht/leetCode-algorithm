@@ -27,7 +27,7 @@ const isPalindrome = x => parseInt(x.toString().split('').reverse().join('')) ==
 // 转化字符串后遍历，对等的索引对应值相等
 const isPalindromeII = x => {
   const strNum = x.toString();
-  if (x < 0) return false;
+  if (x < 0 || (x % 10 == 0 && x != 0)) return false;
   for (let i = 0, len = strNum.length; i < len; i++) {
     if (strNum[i] !== strNum[len - 1 - i]) return false;
   }
@@ -38,7 +38,7 @@ const isPalindromeII = x => {
 //进阶: 不将整数转为字符串来解决
 // 回文数规律 通过求余运算来求各个位上的数，通过除法运算来降位
 const isPalindromeIII = x => {
-  if (x < 0) return false;
+  if (x < 0 || (x % 10 == 0 && x != 0)) return false;
   let temp = 0;
   let number = x;
   while (number) {
