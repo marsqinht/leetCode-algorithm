@@ -1,0 +1,22 @@
+{
+  "name": "leetcode-algorithm",
+  "version": "1.0.0",
+  "description": "leetCode 算法训练",
+  "main": "algorithm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marsqinht/leetCode-algorithm.git"
+  },
+  "author": "qinhaitao <qinhaitaocn@163.com> (http://github.com/marsqinht)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marsqinht/leetCode-algorithm/issues"
+  },
+  "homepage": "https://github.com/marsqinht/leetCode-algorithm#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
