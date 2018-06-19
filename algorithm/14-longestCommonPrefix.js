@@ -70,4 +70,4 @@ const longestCommonPrefix2 = function (strs) {
   return strMap.join('');
 };
 
-console.log(longestCommonPrefix2(['', 'b']));
+console.log(longestCommonPrefix2(['', 'b']), longestCommonPrefix(['']));
