@@ -48,7 +48,7 @@ const romanToInt = str => {
   const map = Object.assign(romanMap, specialRomanMap);
 
   return Object.keys(specialRomanMap)
-    .filter(el=> {
+    .filter(el => {
       let romanRxp = new RegExp(el);
       if (romanRxp.test(str)) { 
         str = str.replace(romanRxp, '');
@@ -57,18 +57,13 @@ const romanToInt = str => {
       return false;
     })
     .concat(str.split(''))
-    .map(el => {
-      return map[el];
-    })
-    .reduce((prev, next)=> {
-      return prev + next;
-    });
-
+    .map(el => map[el])
+    .reduce((prev, next) => prev + next);
 };
 
 
 // 所有按常规相加, 特殊情况实际多加了2* prev 判断相减即可
-var romanToIntII = s => {
+const romanToIntII = s => {
   let map = {
     'I': 1,
     'V': 5,
@@ -86,10 +81,8 @@ var romanToIntII = s => {
     if (prev && map[prev] < map[s[i]]) {
       num -= map[prev] * 2;
     }
-
     prev = s[i];
   }
-
   return num;
 };
 
