@@ -12,7 +12,13 @@
 * @return {number[][]}
 */
 const subsets = nums => {
+  let subsetsArr = [];
+  const find = (index, nums, start) => {
 
+  };
+  find(0, nums, 1);
+
+  return subsetsArr;
 };
 
 console.log(subsets([1, 2, 3]));
