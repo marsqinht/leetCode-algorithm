@@ -22,5 +22,5 @@ const numJewelsInStones = (J, S) => {
   return S.split('').map(el => J.split('').includes(el) ? '$' : '').filter(el => el === '$').length;
 };
 
-
 console.log(numJewelsInStones('a', 'aAAbbbb'));
+

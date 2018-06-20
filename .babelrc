@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false
+    }, "stage-1"]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["env", "stage-1"]
+      ]
+    }
+  }
+}
