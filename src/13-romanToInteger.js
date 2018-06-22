@@ -22,9 +22,9 @@
  */
 
 /**
-  * @param {string} s
-  * @return {number}
-  */
+* @param {string} s
+* @return {number}
+*/
 
 // 挑出特殊情况组成数组, 常规情况组成数组 然后相加 'MCMXCIV' --> ['M', 'CM', 'XC', 'IV'] -->[1000, 900, 90, 4] --> 1994
 const romanToInt = str => {
