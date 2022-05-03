@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=1 lang=javascript
- *
+ *  输入：nums = [2,7,11,15], target = 9
  * [1] 两数之和
  */
 

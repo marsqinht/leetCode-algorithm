@@ -10,8 +10,5 @@
  * @param {number} numRows
  * @return {string}
  */
-var convert = function(s, numRows) {
-
-};
+var convert = function (s, numRows) {};
 // @lc code=end
-
