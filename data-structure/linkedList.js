@@ -9,35 +9,35 @@ class LinkedList {
   #head
   #size
   constructor() {
-    this.head = null
-    this.size = 0
+    this.#head = null
+    this.#size = 0
   }
 
   add(element) {
 
     const node = new Node(element)
 
-    if(this.head === null) {
-      this.head = node
+    if(this.#head === null) {
+      this.#head = node
     } else {
-      this.getNodeFromIndex(this.size - 1).next = node
+      this.getNodeFromIndex(this.#size - 1).next = node
     }
 
-    this.size++
+    this.#size++
   }
 
   insertAt(element, index) {
     const node = new Node(element)
 
-    if(this.head === null) {
-      this.head = node
-      this.size++
+    if(this.#head === null) {
+      this.#head = node
+      this.#size++
       return
     }
 
     if(index === 0) {
-      node.next = this.head
-      this.head = node
+      node.next = this.#head
+      this.#head = node
       return
     }
 
@@ -47,20 +47,20 @@ class LinkedList {
 
     prevNode.next = node
 
-    this.size++
+    this.#size++
   }
 
   removeFrom(index) {
 
 
-    if(this.head === null) {
+    if(this.#head === null) {
       return
     }
 
     if(index === 0) {
-      this.head = this.head.next
-      this.head.next = null
-      this.size--
+      this.#head = this.#head.next
+      this.#head.next = null
+      this.#size--
       return
     }
     const node = this.getNodeFromIndex(index - 1)
@@ -68,7 +68,7 @@ class LinkedList {
     node.next = node.next.next
 
   
-    this.size--
+    this.#size--
   }
 
 
@@ -83,10 +83,10 @@ class LinkedList {
   // size_Of_List
   // PrintList
   getNodeFromIndex(index) {
-    let node = this.head
+    let node = this.#head
     let i = 0
 
-    if(index > this.size || !Number.isInteger(index) || index < 0) {
+    if(index > this.#size || !Number.isInteger(index) || index < 0) {
       throw new Error('index 错误')
     }
     
@@ -101,7 +101,7 @@ class LinkedList {
   }
 
   get(value) {
-    let currNode = this.head
+    let currNode = this.#head
     while(node.next) {
       currNode = node.next
     }
@@ -111,7 +111,7 @@ class LinkedList {
   }
 
   printList() {
-    let node = this.head
+    let node = this.#head
     let i = 0
 
     if(!node) {
