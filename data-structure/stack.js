@@ -42,3 +42,6 @@ const stack = new StringStack(1)
 stack.push(1)
 
 stack.print()
+
+
+
