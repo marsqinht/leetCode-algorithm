@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=206 lang=javascript
+ * @lc app=leetcode.cn id=148 lang=javascript
  *
- * [206] 反转链表
+ * [148] 排序链表
  */
 
 // @lc code=start
@@ -11,23 +11,13 @@
  *     this.val = (val===undefined ? 0 : val)
  *     this.next = (next===undefined ? null : next)
  * }
- * [1, 2, 3, 4, 5]
  */
 /**
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
-  let prev = null
-  let curr = head
+var sortList = function(head) {
 
-  while(curr) {
-    const next = curr.next
-    curr.next = prev
-    prev = curr
-    curr = next
-  }
-  return prev
 };
 // @lc code=end
 

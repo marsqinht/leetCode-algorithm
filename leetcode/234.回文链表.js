@@ -16,11 +16,40 @@
  * @param {ListNode} head
  * @return {boolean}
  */
+let node = null
 var isPalindrome = function(head) {
-  const stack = []
+  // const stack = []
+  node = head
 
-  while()
+  // let currNode = head
+  // while(currNode) {
+  //   stack.push(currNode.val)
+  //   currNode = currNode.next
+  // }
+
+  // if(!stack.length) return true
+
+  // let leftIndex = 0
+  // let rightIndex = stack.length - 1
+
+  // while(leftIndex <= rightIndex) {
+  //   if(stack[leftIndex] !== stack[rightIndex]) {
+  //     return false
+  //   }
+  //   leftIndex += 1
+  //   rightIndex -= 1
+  // }
+
+  return check(head)
 
 };
+
+function check(head) {
+  if(!head) return true
+
+  let res = check(head.next) && (node.value === head.value)
+  node = node.next
+  return res
+}
 // @lc code=end
 
