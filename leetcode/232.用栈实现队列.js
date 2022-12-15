@@ -7,7 +7,7 @@
 // @lc code=start
 
 var MyQueue = function() {
-
+  this.list = []
 };
 
 /** 
@@ -15,7 +15,7 @@ var MyQueue = function() {
  * @return {void}
  */
 MyQueue.prototype.push = function(x) {
-
+  this.list.push(x)
 };
 
 /**
@@ -29,14 +29,14 @@ MyQueue.prototype.pop = function() {
  * @return {number}
  */
 MyQueue.prototype.peek = function() {
-
+  return this.list[this.list.length - 1]
 };
 
 /**
  * @return {boolean}
  */
 MyQueue.prototype.empty = function() {
-
+  return !!this.list.length
 };
 
 /**
